@@ -8,7 +8,7 @@ export default function TermsScreen({navigation}) {
   return (
     <View>
       <Header navigation = {navigation}/>
-      <Text>Here ye! Here ye! These are my terms!</Text>
+      <Text>hear ye! hear ye! These are my terms!</Text>
       <Footer navigation = {navigation}/>
     </View>
   );

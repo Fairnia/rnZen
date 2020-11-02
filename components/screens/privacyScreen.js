@@ -8,7 +8,7 @@ export default function PrivacyScreen({navigation}) {
   return (
     <View style={styles.footer}>
       <Header navigation = {navigation}/>
-      <Text>Here ye! Here ye! Here is my request for privacy please!!!</Text>
+      <Text>hear ye! hear ye! Here is my request for privacy please!!!</Text>
       <Footer navigation = {navigation}/>
     </View>
   );
