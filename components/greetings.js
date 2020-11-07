@@ -1,9 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import { Text, View } from 'react-native';
 import FadeInOut from 'react-native-fade-in-out';
-import Header from '../header'
-import Footer from '../footer'
-import Greetings from '../greetings'
 
 const greetings = [
   {'greeting': 'Say hello to your partner' ,"duration":8000},
@@ -15,13 +12,10 @@ const greetings = [
   {'greeting': '' ,"duration":8000},
 ]
 
-export default function ChatScreen({navigation}) {
+const Greetings = forwardRef((props,ref) =>{
   const [greeting, setGreeting] = useState('');
   const [visible, setVisible] = useState(false);
   const [fadeDuration, setfadeDuration] = useState(2000);
-
-  const greetingsRef = useRef();
-
   var i = 0;
   const callNextGreeting = ()=>{
     setTimeout(()=>{
@@ -36,6 +30,7 @@ export default function ChatScreen({navigation}) {
   }
 
   const callGreeting = () =>{
+    console.log('called from mommma!')
     if(greetings.length == i) {
       i = 0;
     }
@@ -47,37 +42,20 @@ export default function ChatScreen({navigation}) {
       callNextGreeting();
     }
   }
-
-  const callShowGreetings = () =>{
-     greetingsRef.current.startGreetings();
-  }
+  useImperativeHandle(ref, () => ({
+    startGreetings: () => {
+        callGreeting();
+    }
+  }));
 
 
   return (
-    <View style={styles.footer}>
-      <Header navigation = {navigation}/>
-      <Text>hear ye! hear ye! This is my chatscreen!</Text>
-      <Greetings ref = {greetingsRef}/>
-      <Button
-      title="Start Chatting"
-      onPress={() => callShowGreetings()}
-      />
-      <Button
-      title="Stop Chatting"
-      onPress={() => navigation.navigate('Thankyou')}
-      />
-      <Footer navigation = {navigation}/>
+    <View >
+      <FadeInOut visible={visible} duration={fadeDuration}>
+        <Text>{greeting}</Text>
+      </FadeInOut>
     </View>
   );
-}
+})
 
-const styles = StyleSheet.create({
-  footer: {
-    flex: 1,
-    backgroundColor: '#fff',
-    border:"#939799 1px solid",
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding:'50',
-  },
-});
+export default Greetings;
