@@ -1,29 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Text } from 'react-native';
+import { FooterContainer, FooterButton, FooterTNP } from '../styles/styles'
 
 export default function Footer({navigation}) {
   return (
-    <View style={styles.footer}>
+    <FooterContainer>
       <Text>Copyright 2020 ZenGreet</Text>
-      <Button
-      title="Terms"
-      onPress={() => navigation.navigate('Terms')}
-      />
-      <Button
-      title="Privacy"
-      onPress={() => navigation.navigate('Privacy')}
-      />
-    </View>
+      <FooterTNP>
+      <FooterButton
+        onPress={() => navigation.navigate('Terms')}
+      >
+        <Text>Terms</Text>
+      </FooterButton>
+      <FooterButton
+        onPress={() => navigation.navigate('Privacy')}
+      >
+        <Text>Privacy</Text>
+      </FooterButton>
+      </FooterTNP>
+    </FooterContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  footer: {
-    backgroundColor: '#fff',
-    border:"#939799 1px solid",
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin:'20',
-    padding: '20',
-  },
-});

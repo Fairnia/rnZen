@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight, Alert} from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Image, TouchableHighlight, Alert} from 'react-native'
+import {Container} from '../../styles/styles'
 import Header from '../header'
 import Footer from '../footer'
 
@@ -13,23 +14,22 @@ export default function HomeScreen({navigation}) {
     })
   }
   return (
-    <View style={styles.container}>
+    <Container>
       <Header navigation = {navigation}/>
       <View >
         <Text>Welcome to ZenGreet</Text>
-
-          <TextInput
-            style={{ height: 40, borderColor: 'gray', borderWidth: 1 , paddingLeft:'5px'}}
-            onChangeText={text => setDisplayName(text)}
-            value={displayName}
-          />
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 , paddingLeft:'5px'}}
+          onChangeText={text => setDisplayName(text)}
+          value={displayName}
+        />
         <Button
         title="Start Chatting"
         onPress={() => vetNameBeforeChat()}
         />
       </View>
       <Footer navigation = {navigation}/>
-    </View>
+    </Container>
   );
 }
 

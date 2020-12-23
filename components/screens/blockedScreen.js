@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import {Container} from '../../styles/styles'
 import Footer from '../footer'
 
 
 export default function PrivacyScreen({navigation}) {
   return (
-    <View style={styles.footer}>
+    <Container style={styles.footer}>
       <Text>Sorry but you've been blocked! You can no longer use ZenGreet at this time.</Text>
       <Footer navigation = {navigation}/>
-    </View>
+    </Container>
   );
 }
 

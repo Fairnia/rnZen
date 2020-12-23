@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import {Container} from '../../styles/styles'
 import FadeInOut from 'react-native-fade-in-out';
 import Header from '../header'
 import Footer from '../footer'
@@ -16,7 +17,7 @@ export default function ChatScreen({route, navigation}) {
   }
 
   return (
-    <View style={styles.footer}>
+    <Container style={styles.footer}>
       <Header navigation = {navigation}/>
       <Text>hear ye! hear ye! This is my chatscreen! {displayName}</Text>
       <Greetings ref = {greetingsRef}/>
@@ -29,7 +30,7 @@ export default function ChatScreen({route, navigation}) {
       onPress={() => navigation.navigate('Thankyou')}
       />
       <Footer navigation = {navigation}/>
-    </View>
+    </Container>
   );
 }
 
