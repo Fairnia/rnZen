@@ -5,58 +5,20 @@ import Header from '../header'
 import Footer from '../footer'
 import Greetings from '../greetings'
 
-const greetings = [
-  {'greeting': 'Say hello to your partner' ,"duration":8000},
-  {'greeting': 'May you be happy' ,"duration":8000},
-  {'greeting': 'May you you be healthy' ,"duration":8000},
-  {'greeting': 'May you stay safe' ,"duration":8000},
-  {'greeting': 'Share a moment of presence with your partner' ,"duration":8000},
-  {'greeting': 'Thank your partner and say goodbye' ,"duration":8000},
-  {'greeting': '' ,"duration":8000},
-]
 
-export default function ChatScreen({navigation}) {
-  const [greeting, setGreeting] = useState('');
-  const [visible, setVisible] = useState(false);
-  const [fadeDuration, setfadeDuration] = useState(2000);
+export default function ChatScreen({route, navigation}) {
+  const {displayName} = route.params.displayName;
 
   const greetingsRef = useRef();
-
-  var i = 0;
-  const callNextGreeting = ()=>{
-    setTimeout(()=>{
-      setVisible(false);
-    }, greetings[i].duration-2000);
-
-    setTimeout(()=>{
-      i++;
-      setGreeting(greetings[i].greeting);
-      callGreeting();
-    }, greetings[i].duration);
-  }
-
-  const callGreeting = () =>{
-    if(greetings.length == i) {
-      i = 0;
-    }
-    if( greetings.length-1 > i) {
-      if(i === 0){
-        setGreeting(greetings[i].greeting);
-      }
-      setVisible(true);
-      callNextGreeting();
-    }
-  }
 
   const callShowGreetings = () =>{
      greetingsRef.current.startGreetings();
   }
 
-
   return (
     <View style={styles.footer}>
       <Header navigation = {navigation}/>
-      <Text>hear ye! hear ye! This is my chatscreen!</Text>
+      <Text>hear ye! hear ye! This is my chatscreen! {displayName}</Text>
       <Greetings ref = {greetingsRef}/>
       <Button
       title="Start Chatting"

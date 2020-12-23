@@ -8,6 +8,7 @@ import PrivacyScreen from './components/screens/privacyScreen';
 import ChatScreen from './components/screens/chatScreen';
 import ThankyouScreen from './components/screens/thankyouScreen';
 import BlockedScreen from './components/screens/blockedScreen';
+import Header from './components/header';
 
 
 const Stack = createStackNavigator();
@@ -16,7 +17,11 @@ export default function App() {
   return (
     <NavigationContainer initialRouteName="Home">
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'ZenGreet Home', headerShown: false }} />
+        <Stack.Screen name="Home" component={HomeScreen}
+         options={({ navigation }) => ({
+          headerTitle: () => <Header navigation = {navigation} title='words' />
+        })}
+        />
         <Stack.Screen name="Chat" component={ChatScreen} options={{ title: 'ZenGreet Chat', headerShown: false }} />
         <Stack.Screen name="Thankyou" component={ThankyouScreen} options={{ title: 'Thank you' }} />
         <Stack.Screen name="Terms" component={TermsScreen}  options={{ title: 'Terms and Conditions' }}/>
@@ -36,3 +41,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+// Things to do next:
+  // modal - passing name to chatsreen
+  // custom header
+  // styled components
