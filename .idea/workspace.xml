@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ccc19a3-6013-4cfd-808f-df41d6c84ca7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/screens/homeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/screens/homeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +53,10 @@
     </state>
     <state x="282" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.696/1366.0.1920.1080@0.27.1366.696" timestamp="1603488693580" />
     <state x="1829" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.696/1366.0.1920.1080@1366.0.1920.1080" timestamp="1603488337527" />
-    <state x="1897" y="168" width="949" height="699" key="AVDManager" timestamp="1603492661269">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="294" y="83" width="676" height="451" key="AVDManager" timestamp="1609111486675">
+      <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state x="378" y="135" width="676" height="451" key="AVDManager/0.27.1366.696/1366.0.1920.1080@0.27.1366.696" timestamp="1603489494662" />
+    <state x="294" y="83" width="676" height="451" key="AVDManager/0.27.1366.696/1366.0.1920.1080@0.27.1366.696" timestamp="1609111486675" />
     <state x="1897" y="168" width="949" height="699" key="AVDManager/0.27.1366.696/1366.0.1920.1080@1366.0.1920.1080" timestamp="1603492661269" />
     <state x="1884" y="135" key="SettingsEditor" timestamp="1603487904879">
       <screen x="1366" y="0" width="1920" height="1080" />

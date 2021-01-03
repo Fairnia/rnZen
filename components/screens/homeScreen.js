@@ -1,98 +1,54 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Image, TouchableHighlight, Alert} from 'react-native'
-import {Container} from '../../styles/styles'
+import React, { useState } from 'react';
+import { Text, View, Button, TouchableOpacity, ImageBackground, FlatList } from 'react-native'
+import { Container, HomeContent, BannerView, Banner, BannerContent, HomeStartButton, HomeStartCircle, HomeStartText, HomeDescription, DescriptionHeader, DescriptionText, ContainerAnim, RightCol, LeftCol, Ball } from '../../styles/styles'
+import * as Animatable from 'react-native-animatable';
 import Header from '../header'
 import Footer from '../footer'
+import StepOne from '../homeSections/stepOne'
+import StepTwo from '../homeSections/stepTwo'
+import StepThree from '../homeSections/stepThree'
+import StepFour from '../homeSections/stepFour'
+
+const DATA = [
+  {
+    id: 'hs1'
+  },
+  {
+    id: 'hs2'
+  },
+  {
+    id: 'hs3'
+  },
+  {
+    id: 'hs4'
+  }
+];
 
 export default function HomeScreen({navigation}) {
-  const [displayName, setDisplayName] = React.useState('Human');
-  const [nameAcceptable, setnameAcceptable] = React.useState(false);
-  const vetNameBeforeChat = () =>{
-    console.log('hello from vetname')
-    navigation.navigate('Chat',{
-      displayName: {displayName}
-    })
+  const renderItem = ({ item }) => {
+    if (item.id == 'hs1') {
+      return <StepOne />;
+    }else if(item.id == 'hs2'){
+      return <StepTwo />;
+    }else if(item.id == 'hs3'){
+      return <StepThree />;
+    }else if(item.id == 'hs4'){
+      return <StepFour />;
+    }
   }
+
+
   return (
     <Container>
       <Header navigation = {navigation}/>
-      <View >
-        <Text>Welcome to ZenGreet</Text>
-        <TextInput
-          style={{ height: 40, borderColor: 'gray', borderWidth: 1 , paddingLeft:'5px'}}
-          onChangeText={text => setDisplayName(text)}
-          value={displayName}
-        />
-        <Button
-        title="Start Chatting"
-        onPress={() => vetNameBeforeChat()}
-        />
-      </View>
-      <Footer navigation = {navigation}/>
+
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+      />
+
+
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: '600px',
-    margin: 'auto',
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    border:"#939799 1px solid",
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5
-  },
-  openButton: {
-    backgroundColor: "#F194FF",
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center"
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-// onPress={() => navigation.navigate('Chat',{
-//   displayName: {displayName}
-// })}

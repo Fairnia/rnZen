@@ -17,7 +17,7 @@ export default function ChatScreen({route, navigation}) {
   }
 
   return (
-    <Container style={styles.footer}>
+    <Container>
       <Header navigation = {navigation}/>
       <Text>hear ye! hear ye! This is my chatscreen! {displayName}</Text>
       <Greetings ref = {greetingsRef}/>
@@ -33,14 +33,3 @@ export default function ChatScreen({route, navigation}) {
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  footer: {
-    flex: 1,
-    backgroundColor: '#fff',
-    border:"#939799 1px solid",
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding:'50',
-  },
-});
