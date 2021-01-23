@@ -1,14 +1,9 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
 import bgImg from '../assets/banner1.png';
 
 //  move header and footer css to styles.js
 //  move all other css out of components
-//  check on expo
 
-let ScreenHeight = Dimensions.get("window").height;
-let BannerHeight = ScreenHeight * .4;
-let ScreenWidth = Dimensions.get('window').width;
 
 const bannerGradient = 'background: linear-gradient(180deg, rgba(46,92,111,1) 0%, rgba(23,99,130,1) 0%, rgba(216,223,226,1) 89%, rgba(255,255,255,1) 100%);'
 
@@ -122,8 +117,8 @@ export const HomeDescription = styled.Text`
 export const DescriptionHeader = styled.Text`
   color: ${signatureColor};
   text-align:center;
-  padding: 5px;
-  font-size: 22px;
+  padding: 40px 5px 25px;
+  font-size: 28px;
 `
 
 export const ContainerAnim = styled.View`
@@ -132,7 +127,7 @@ export const ContainerAnim = styled.View`
   display:flex;
   flex-direction: row;
   align-self: center;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   margin-top: 20px;
 `
 
@@ -151,12 +146,20 @@ export const LeftCol = styled.View`
   align-items: flex-end;
   justify-content: flex-end;
 `
-
+export const ColStepTwo = styled.View`
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  align-items: center;
+  justify-content: center;
+`
 export const DescriptionText = styled.Text`
   color: ${signatureColor};
   text-align:center;
   padding: 5px;
   font-size: 18px;
+  margin:0 auto 40px;
+  max-width:350px;
 `
 
 export const FooterContainer = styled.View`
@@ -168,7 +171,7 @@ export const FooterContainer = styled.View`
 `
 export const FooterTNP = styled.View`
   flex-direction: row;
-  padding: 10px 0 0 0 ;
+  padding: 10px 0;
 `
 export const FooterButton = styled.TouchableOpacity`
   background: transparent;

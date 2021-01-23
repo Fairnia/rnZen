@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native'
-import { ContainerAnim, RightCol, LeftCol, DescriptionText } from '../../styles/styles'
+import { ContainerAnim, RightCol, LeftCol, DescriptionHeader, DescriptionText } from '../../styles/styles'
 import * as Animatable from 'react-native-animatable';
 
 export default function StepOne() {
+  const [ stepOneAnim, changeStepOneAnim ] = useState();
   const rightBall = {
     0:{
       opacity: 0,
@@ -105,14 +106,15 @@ export default function StepOne() {
   }
   return (
     <View>
+      <DescriptionHeader>How it Works</DescriptionHeader>
       <ContainerAnim>
         <LeftCol>
-          <Animatable.Text style={styles.AnimText} animation={leftText} duration={5000} iterationDelay={2000} iterationCount={3} easing="linear">Hey</Animatable.Text>
-          <Animatable.View style={styles.Ball} animation={leftBall} duration={5000} iterationDelay={2000} iterationCount={3} easing="linear"></Animatable.View>
+          <Animatable.Text style={styles.AnimText} animation={leftText} duration={5000} iterationDelay={2000} iterationCount={12} easing="linear">Hey</Animatable.Text>
+          <Animatable.View style={styles.Ball} animation={leftBall} duration={5000} iterationDelay={2000} iterationCount={12} easing="linear"></Animatable.View>
         </LeftCol>
         <RightCol>
-          <Animatable.Text style={styles.AnimText} animation={rightText} duration={5000} iterationDelay={2000} iterationCount={3} easing="linear">Yo</Animatable.Text>
-          <Animatable.View style={styles.Ball} animation={rightBall}  duration={5000} iterationDelay={2000} iterationCount={3} easing="linear"></Animatable.View>
+          <Animatable.Text style={styles.AnimText} animation={rightText} duration={5000} iterationDelay={2000} iterationCount={12} easing="linear">Yo</Animatable.Text>
+          <Animatable.View style={styles.Ball} animation={rightBall}  duration={5000} iterationDelay={2000} iterationCount={12} easing="linear"></Animatable.View>
         </RightCol>
       </ContainerAnim>
       <DescriptionText>Through video, you'll meet your partner and introduce yourselves</DescriptionText>

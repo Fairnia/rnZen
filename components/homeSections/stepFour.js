@@ -4,6 +4,7 @@ import { ContainerAnim, RightCol, LeftCol, DescriptionText } from '../../styles/
 import * as Animatable from 'react-native-animatable';
 
 export default function StepFour() {
+  console.log('step four has been rendered')
   const rightBall = {
     0:{
       opacity: .25,

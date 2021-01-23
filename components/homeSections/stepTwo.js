@@ -1,41 +1,72 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native'
-import { ContainerAnim, RightCol, LeftCol, DescriptionText } from '../../styles/styles'
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native'
+import { ContainerAnim, ColStepTwo, DescriptionText, LeftCol, RightCol } from '../../styles/styles'
 import * as Animatable from 'react-native-animatable';
 
+const greetings = [
+  "May you be happy",
+  "May you be healthy",
+  "May you be safe",
+]
+
 export default function StepTwo() {
-  const rightBall = {
+  const [leftTextState, setLeftTextState] = useState('');
+  const [greeting, setGreeting] = useState('May you be happy');
+  const leftBall = {
     0:{
-      opacity: .25,
-      translateX: 100,
-      translateY: 0,
+      width: 50,
+      height: 50
+      },
+    .10:{
+      width: 55,
+      height: 55
     },
-    .3:{
-      opacity: 1,
-      translateX: 10,
-      translateY: 0,
+    .20:{
+      width: 50,
+      height: 50
     },
-    .60:{
-      translateX: 10,
-      translateY: 0,
+    .30:{
+      width: 55,
+      height: 55
     },
-    .65:{
-      translateX: 10,
-      translateY: -7,
-    },
-    .70:{
-      translateY: 0,
-    },
-    .75:{
-      translateY: -7,
-    },
-    .80:{
-      translateX: 10,
-      translateY: 0,
+    .40:{
+      width: 50,
+      height: 50
     },
     1:{
-      translateX: 10,
-      translateY: 0,
+      width: 50,
+      height: 50
+    }
+  }
+
+  const rightBall = {
+    0:{
+      width: 50,
+      height: 50
+      },
+    .50:{
+      width: 50,
+      height: 50
+      },
+    .60:{
+      width: 55,
+      height: 55
+    },
+    .70:{
+      width: 50,
+      height: 50
+    },
+    .80:{
+      width: 55,
+      height: 55
+    },
+    .90:{
+      width: 50,
+      height: 50
+    },
+    1:{
+      width: 50,
+      height: 50
     }
   }
 
@@ -57,41 +88,6 @@ export default function StepTwo() {
     }
   }
 
-  const leftBall = {
-    0:{
-      opacity: .25,
-      translateX: -100,
-      translateY: 0,
-    },
-    .3:{
-      opacity: 1,
-      translateX: -10,
-      translateY: 0,
-    },
-    .4:{
-      translateX: -10,
-      translateY: 0,
-    },
-    .45:{
-      translateX: -10,
-      translateY: -7,
-    },
-    .50:{
-      translateY: 0,
-    },
-    .55:{
-      translateY: -7,
-    },
-    .60:{
-      translateX: -10,
-      translateY: 0,
-    },
-    1:{
-      translateX: -10,
-      translateY: 0,
-    }
-  }
-
   const leftText ={
     0:{
       opacity:0
@@ -109,16 +105,22 @@ export default function StepTwo() {
       opacity:0
     }
   }
+
+
   return (
     <View>
       <ContainerAnim>
         <LeftCol>
-          <Text >May you be happy</Text>
-          <View style={styles.Ball} ></View>
+          <Text>{greeting}</Text>
+          <View style={styles.BallContainer} >
+            <Animatable.View style={styles.Ball} animation={leftBall} duration={2000} iterationDelay={1000} iterationCount="infinite" easing="ease-out" ></Animatable.View>
+          </View>
         </LeftCol>
         <RightCol>
-          <Text >May you be happy</Text>
-          <View style={styles.Ball} ></View>
+          <Text>{greeting}</Text>
+          <View style={styles.BallContainer} >
+            <Animatable.View style={styles.Ball} animation={rightBall} duration={2000} iterationCount="infinite" iterationDelay={1000}  easing="ease-out"></Animatable.View>
+          </View>
         </RightCol>
       </ContainerAnim>
       <DescriptionText>You'll be prompted to offer each other kind greetings</DescriptionText>
@@ -126,10 +128,12 @@ export default function StepTwo() {
   );
 }
 
+// <Text style={styles.AnimText} >May you be happy</Text>
 const styles = StyleSheet.create({
   Ball: {
     width:50,
     height: 50,
+    margin: 25,
     backgroundColor: '#247fa3',
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
@@ -137,8 +141,18 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 50,
     marginTop: 15,
   },
+  BallContainer:{
+    display:"flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 55,
+    width: 55,
+    marginRight: 10,
+    marginLeft: 10,
+    marginTop: 45,
+  },
   AnimText:{
-    fontSize: 28,
+    fontSize: 18,
     marginLeft: 15,
     marginRight: 15,
   }

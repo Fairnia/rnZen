@@ -18,6 +18,7 @@ export default function Footer({navigation}) {
         <Text>Privacy</Text>
       </FooterButton>
       </FooterTNP>
+      <Text>By using the ZenGreet App, you agree to the terms and conditions.</Text>
     </FooterContainer>
   );
 }

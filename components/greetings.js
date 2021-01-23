@@ -6,7 +6,7 @@ const greetings = [
   {'greeting': 'Say hello to your partner' ,"duration":8000},
   {'greeting': 'May you be happy' ,"duration":8000},
   {'greeting': 'May you you be healthy' ,"duration":8000},
-  {'greeting': 'May you stay safe' ,"duration":8000},
+  {'greeting': 'May you be safe' ,"duration":8000},
   {'greeting': 'Share a moment of presence with your partner' ,"duration":8000},
   {'greeting': 'Thank your partner and say goodbye' ,"duration":8000},
   {'greeting': '' ,"duration":8000},

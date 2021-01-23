@@ -4,83 +4,29 @@ import { ContainerAnim, RightCol, LeftCol, DescriptionText } from '../../styles/
 import * as Animatable from 'react-native-animatable';
 
 export default function StepThree() {
-  const rightBall = {
+  const animBall = {
     0:{
-      opacity: .25,
-      translateX: 100,
-      translateY: 0,
+      opacity: 1
     },
-    .3:{
-      opacity: 1,
-      translateX: 10,
-      translateY: 0,
+    .5:{
+      opacity: .55
     },
-    .60:{
-      translateX: 10,
-      translateY: 0,
-    },
-    .65:{
-      translateX: 10,
-      translateY: -7,
-    },
-    .70:{
-      translateY: 0,
-    },
-    .75:{
-      translateY: -7,
-    },
-    .80:{
-      translateX: 10,
-      translateY: 0,
+    .8:{
+      opacity: .9
     },
     1:{
-      translateX: 10,
-      translateY: 0,
+      opacity: 1
     }
   }
 
-  const leftBall = {
-    0:{
-      opacity: .25,
-      translateX: -100,
-      translateY: 0,
-    },
-    .3:{
-      opacity: 1,
-      translateX: -10,
-      translateY: 0,
-    },
-    .4:{
-      translateX: -10,
-      translateY: 0,
-    },
-    .45:{
-      translateX: -10,
-      translateY: -7,
-    },
-    .50:{
-      translateY: 0,
-    },
-    .55:{
-      translateY: -7,
-    },
-    .60:{
-      translateX: -10,
-      translateY: 0,
-    },
-    1:{
-      translateX: -10,
-      translateY: 0,
-    }
-  }
   return (
     <View>
       <ContainerAnim>
         <LeftCol>
-          <View style={styles.Ball} ></View>
+          <Animatable.View style={styles.Ball} animation={animBall} duration={4000} iterationCount="infinite" easing="ease-out"></Animatable.View>
         </LeftCol>
         <RightCol>
-          <View style={styles.Ball} ></View>
+          <Animatable.View style={styles.Ball} animation={animBall} duration={4000} iterationCount="infinite" easing="ease-out"></Animatable.View>
         </RightCol>
       </ContainerAnim>
       <DescriptionText>You'll then share a moment of mindful presence</DescriptionText>
@@ -93,12 +39,30 @@ const styles = StyleSheet.create({
   Ball: {
     width:50,
     height: 50,
+    margin:15,
+    // shadowColor: '#174b65',
+    shadowColor: 'yellow',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 1,
+    shadowRadius: 35,
+    elevation: 1,
     backgroundColor: '#247fa3',
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
-    marginTop: 15,
+  },
+  BallShadow:{
+    margin: 15,
+    shadowColor: '#192841',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 1,
+    shadowRadius: 75,
+    elevation: 25,
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
   },
   AnimText:{
     fontSize: 28,
