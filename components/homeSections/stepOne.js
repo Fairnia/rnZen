@@ -104,9 +104,9 @@ export default function StepOne() {
       opacity:1
     }
   }
+  // <DescriptionHeader>How it Works</DescriptionHeader>
   return (
     <View>
-      <DescriptionHeader>How it Works</DescriptionHeader>
       <ContainerAnim>
         <LeftCol>
           <Animatable.Text style={styles.AnimText} animation={leftText} duration={5000} iterationDelay={2000} iterationCount={12} easing="linear">Hey</Animatable.Text>

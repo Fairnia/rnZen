@@ -15,9 +15,9 @@ const DATA = [
   {
     id:'hheader'
   },
-  {
-    id:'hbanner'
-  },
+  // {
+  //   id:'hbanner'
+  // },
   {
     id: 'hs1'
   },

@@ -15,8 +15,8 @@ const greetings = [
 const Greetings = forwardRef((props,ref) =>{
   const [greeting, setGreeting] = useState('');
   const [visible, setVisible] = useState(false);
-  const [fadeDuration, setfadeDuration] = useState(2000);
-  var i = 0;
+  const [fadeDuration, setfadeDuration] = useState(8000);
+  let i = 0;
   const callNextGreeting = ()=>{
     setTimeout(()=>{
       setVisible(false);

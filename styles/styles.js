@@ -130,7 +130,6 @@ export const ContainerAnim = styled.View`
   padding-bottom: 20px;
   margin-top: 20px;
 `
-
 export const RightCol = styled.View`
   display:flex;
   flex-direction: column;
@@ -152,6 +151,12 @@ export const ColStepTwo = styled.View`
   flex:1;
   align-items: center;
   justify-content: center;
+`
+export const AnimText = styled.Text`
+  padding: 15px 5px 5px;
+  color:#247fa3;
+  font-size: 25px;
+  text-align: center;
 `
 export const DescriptionText = styled.Text`
   color: ${signatureColor};
